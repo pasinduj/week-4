@@ -27,6 +27,14 @@ namespace CustomerApi.Controllers
             return new JsonResult(customer); 
         }
 
+        [HttpDelete(Name = "DeleteCustomer")]
+        public async Task<JsonResult> DeleteCustomer(int customerId)
+        {
+
+            var customer = await _customerMethods.DeleteCustomer(customerId);
+
+            return new JsonResult(customer);
+        }
 
     }
 }
