@@ -1,6 +1,6 @@
 # Week 4
 
-Week 4 Software developer intern (Microservice architectures)
+Week 4 Software developer  (Microservice architectures)
 
 1. Extend the Customer API to have a method to remove the customer by Id
 
