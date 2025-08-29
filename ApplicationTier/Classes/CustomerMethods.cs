@@ -65,5 +65,30 @@ namespace ApplicationTier.Classes
            
         }
 
+        public async Task<CustomerDto> DeleteCustomer(int CustomerId)
+        {
+            var context = new IndustryConnectWeek2Context();
+
+            var customer = await context.Customers.FirstOrDefaultAsync(c => c.Id == CustomerId);
+
+            if (context != null ) { 
+
+            if ( context.Entry(customer) != null ) {
+                context.Entry(customer).State = EntityState.Deleted;
+                context.SaveChanges();
+            }
+
+        }
+
+            return Mapper(customer);
+
+        }
+
+
+
     }
+
+
+
+
 }
